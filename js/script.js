@@ -24,8 +24,8 @@ class Bitcoin {
         for (var i = 0; i < this.prices.length; i++) {
             if (usrStr === this.prices[i].code) {
                 console.log("this is it:" + usrStr)
-                $('.headers:last').append('<div>BTC/' + this.prices[i].code + '</div>')
-                $('.rates:last').append('<div>' + this.prices[i].rate + '</div>')
+                $('.headers:last').append('<div class="col">BTC/' + this.prices[i].code + '</div>')
+                $('.rates:last').append('<div class="col">' + this.prices[i].rate + '</div>')
                 return
             }
         }
@@ -58,6 +58,7 @@ class Bitcoin {
 const bitcoin = new Bitcoin()
 
 refreshTest.addEventListener('click', function (e) {
+    bitcoin.refresh()
     console.log("refreshed")
 })
 
